@@ -19,11 +19,15 @@ function App() {
       }
     });
   }
+
+  const inputIsValid = userInput.duration >= 1;
+
   return (
     <>
       <Header />
       <UserInput userInput={userInput } handleChange={ handleChange }/>
-      <Results userInput={userInput}/>
+      {!inputIsValid && <p className='center'><b>Please enter a duration gather than zero !</b></p>}
+      {inputIsValid && <Results userInput={userInput}/> }
     </>
   )
 }
