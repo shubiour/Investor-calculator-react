@@ -1,0 +1,24 @@
+services:
+  investor-calculator:
+    image: node:20-alpine
+    container_name: investor-calculator
+    hostname: investor-calculator
+    restart: unless-stopped
+    tty: true
+    working_dir: /usr/local/app
+    volumes:
+      - /mnt/Gallery/developments/React Projects/React course/Investor calculator:/usr/local/app
+    command: >
+      sh -c '
+        npm install
+        npm run dev
+      '
+    ports:
+      - "5173:5173"
+    networks:
+      - investor-calculator
+
+networks:
+  investor-calculator:
+    driver: bridge
+    name: investor-calculator
