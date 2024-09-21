@@ -7,7 +7,7 @@ services:
     tty: true
     working_dir: /usr/local/app
     volumes:
-      - /mnt/Gallery/developments/React Projects/React course/Investor calculator:/usr/local/app
+      - /mnt/Gallery/developments/React Projects/React course/Investor-calculator-react:/usr/local/app
     command: >
       sh -c '
         npm install
